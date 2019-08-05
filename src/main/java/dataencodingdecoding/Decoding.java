@@ -2,12 +2,12 @@ package dataencodingdecoding;
 
 import java.util.List;
 
-public class Decoding {
+class Decoding {
     String decoding(List<String> encodedData, List<String> table){
-        String decodedData = "";
-        for (int i = 0; i < encodedData.size(); i++) {
-            decodedData += (char) table.indexOf(encodedData.get(i));
+        StringBuilder decodedData = new StringBuilder();
+        for (String encodedDatum : encodedData) {
+            decodedData.append((char) table.indexOf(encodedDatum));
         }
-        return decodedData;
+        return decodedData.toString();
     }
 }
