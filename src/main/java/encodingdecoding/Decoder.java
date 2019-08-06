@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Decoder {
-   public String decode(String encodedData, List<String> table) {
+    public String getDecodeData(String encodedData, List<String> table) {
         StringBuilder decodedData = new StringBuilder();
         List<String> encoded = convertStringToList(encodedData);
         for (String data : encoded) {

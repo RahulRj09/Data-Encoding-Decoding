@@ -1,11 +1,10 @@
 package encodingdecodingtest;
 
-import encodingdecoding.Decoder;
-import encodingdecoding.Encoder;
-import encodingdecoding.Table;
+import encodingdecoding.*;
+
 import org.junit.Test;
-import readerwriter.Reader;
-import readerwriter.Writer;
+import readerwriter.*;
+
 
 import java.io.FileNotFoundException;
 
@@ -17,7 +16,7 @@ public class EncodingDecodingTest {
         Reader reader = new Reader();
         String path = "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput";
         String expected = "rahul";
-        assertEquals(expected, reader.reader(path));
+        assertEquals(expected, reader.read(path));
 
     }
 
@@ -28,10 +27,10 @@ public class EncodingDecodingTest {
         Table table = new Table();
         Reader reader = new Reader();
         Writer writer = new Writer();
-        String userInput = reader.reader("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
+        String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         String encoded = encoder.encode(userInput, table.generateBinaryTable());
-        writer.writer(encoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
-        String actual = reader.reader("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
+        writer.write(encoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
+        String actual = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         assertEquals(expected, actual);
 
     }
@@ -43,11 +42,11 @@ public class EncodingDecodingTest {
         Reader reader = new Reader();
         Writer writer = new Writer();
         Decoder decoder = new Decoder();
-        String userInput = reader.reader("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
+        String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         String encoded = encoder.encode(userInput, table.generateBinaryTable());
-        writer.writer(encoded,
+        writer.write(encoded,
                 "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
-        assertEquals(userInput, decoder.decode(encoded, table.generateBinaryTable()));
+        assertEquals(userInput, decoder.getDecodeData(encoded, table.generateBinaryTable()));
     }
 
 }
