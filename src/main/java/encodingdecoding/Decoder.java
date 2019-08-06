@@ -3,8 +3,8 @@ package encodingdecoding;
 import java.util.ArrayList;
 import java.util.List;
 
-class Decoder {
-    String decoding(String encodedData, List<String> table) {
+public class Decoder {
+   public String decode(String encodedData, List<String> table) {
         StringBuilder decodedData = new StringBuilder();
         List<String> encoded = convertStringToList(encodedData);
         for (String data : encoded) {
