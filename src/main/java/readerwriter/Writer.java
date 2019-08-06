@@ -1,4 +1,4 @@
-package dataencodingdecoding;
+package readerwriter;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.IOException;
 
 
 public class Writer {
-    void writer(String encodedData,String path) {
+    public void writer(String encodedData, String path) {
         File filePath = new File(path);
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
             bw.write(encodedData);
