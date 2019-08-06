@@ -1,4 +1,4 @@
-package dataencodingdecoding;
+package encodingdecoding;
 
 
 import java.util.List;

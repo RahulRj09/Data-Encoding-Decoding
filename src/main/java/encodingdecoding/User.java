@@ -1,4 +1,4 @@
-package dataencodingdecoding;
+package encodingdecoding;
 
 import readerwriter.Reader;
 import readerwriter.Writer;
@@ -12,12 +12,12 @@ public class User {
         Table table = new Table();
         Reader reader = new Reader();
         Writer writer = new Writer();
-        String userInput = reader.reader("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
+        String userInput = reader.reader("/Users/rahul.joshi/encodingdecoding/src/main/java/resources/UserInput");
         String userInputEncoded = encoding.encoding(userInput, table.generateBinaryTable());
-        writer.writer(userInputEncoded,"/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
-        String encodedData = reader.reader("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
+        writer.writer(userInputEncoded,"/Users/rahul.joshi/encodingdecoding/src/main/java/resources/EncodedData");
+        String encodedData = reader.reader("/Users/rahul.joshi/encodingdecoding/src/main/java/resources/EncodedData");
         String decoded=decoding.decoding(encodedData, table.generateBinaryTable());
-        writer.writer(decoded,"/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/decodedData");
+        writer.writer(decoded,"/Users/rahul.joshi/encodingdecoding/src/main/java/resources/decodedData");
         System.out.println(decoded);
     }
 }
