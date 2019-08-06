@@ -1,15 +1,15 @@
 package encodingdecoding;
 
 
-import java.util.List;
+import java.util.Map;
 
 public class Encoder {
-    public String encode(String userInput, List<String> table) {
-        String encodedData = "";
+    public String encode(String userInput, Map<Integer, String> table) {
+        StringBuilder encodedData = new StringBuilder();
         for (int i = 0; i < userInput.length(); i++) {
-            encodedData += (table.get((int) userInput.charAt(i)));
+            encodedData.append(table.get((int) userInput.charAt(i)));
         }
-        return encodedData;
+        return encodedData.toString();
     }
 
 }
