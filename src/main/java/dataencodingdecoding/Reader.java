@@ -1,25 +1,14 @@
 package dataencodingdecoding;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 class Reader {
-    String reader(String path) {
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-            return sb.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    String reader(String path) throws FileNotFoundException {
+        File file = new File(path);
+        Scanner sc = new Scanner(file);
+        String input= String.valueOf(sc.next());
+        return input;
     }
 }
 
