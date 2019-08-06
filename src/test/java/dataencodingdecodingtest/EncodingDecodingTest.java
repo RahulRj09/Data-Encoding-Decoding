@@ -1,7 +1,7 @@
 package dataencodingdecodingtest;
 
-import dataencodingdecoding.Encoding;
-import dataencodingdecoding.EncodingDecodingTable;
+import dataencodingdecoding.Encoder;
+import dataencodingdecoding.Table;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 public class EncodingDecodingTest {
     @Test
-    public void shouldDataEncodedOrNot() {
-        List<String> expected = Arrays.asList("01110010", "01100001", "01101000", "01110101", "01101100");
+    public void shouldDataEncoded() {
+        String expected = "0111001001100001011010000111010101101100";
         String userInput = "rahul";
-        Encoding encoding = new Encoding();
-        EncodingDecodingTable encodingDecodingTable = new EncodingDecodingTable();
-        assertEquals(expected,encoding.encoding(userInput, encodingDecodingTable.generateBinaryTable()));
+        Encoder encoding = new Encoder();
+        Table table = new Table();
+        assertEquals(expected,encoding.encoding(userInput, table.generateBinaryTable()));
 
     }
 
