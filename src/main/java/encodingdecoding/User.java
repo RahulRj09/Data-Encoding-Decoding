@@ -14,7 +14,6 @@ public class User {
         Writer writer = new Writer();
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         String userInputEncoded = encoder.encode(userInput, table.generateBinaryTable());
-        System.out.println(userInputEncoded);
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String decoded = decoder.getDecodeData(encodedData, table.generateBinaryTable());
