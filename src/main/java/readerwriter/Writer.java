@@ -1,19 +1,17 @@
 package readerwriter;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 
 public class Writer {
-    public void write(String encodedData, String path) {
-        File filePath = new File(path);
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-            bw.write(encodedData);
+    public void write(byte[] encodedData, String path) {
+        File file = new File(path);
+        try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
+            fileOutputStream.write(encodedData);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 }
+

@@ -19,6 +19,19 @@ public class Table {
         }
         return table;
     }
+
+    public Map<Integer, String> generateBinaryTable2() {
+        for (int i = 0; i < 256; i++) {
+            String binaryNumber = Integer.toBinaryString(i);
+            StringBuilder fixed = new StringBuilder();
+            for (int j = 0; j < 8 - binaryNumber.length(); j++) {
+                fixed.append("0");
+            }
+            fixed.append("1");
+            table.put(i,fixed.toString());
+        }
+        return table;
+    }
 }
 
 
