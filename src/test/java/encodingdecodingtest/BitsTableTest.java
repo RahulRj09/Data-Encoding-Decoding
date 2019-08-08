@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class BitsTableTest {
     @Test
     public void shouldGenerateUniqueCharactersBinaryTable() {
-        HashSet actual = new HashSet<>(Arrays.asList('r', 'a', 'h', 'u', 'l'));
+        HashSet uniqueCharacters = new HashSet<>(Arrays.asList('r', 'a', 'h', 'u', 'l'));
         BitsTable bt = new BitsTable();
         Map<Character, String> expected = new HashMap<>();
         expected.put('a', "000");
@@ -18,7 +18,7 @@ public class BitsTableTest {
         expected.put('u', "010");
         expected.put('h', "011");
         expected.put('l', "100");
-        assertEquals(expected, bt.generateUniqueCharactersBinaryTable(3, actual));
+        assertEquals(expected, bt.generateUniqueCharactersBinaryTable(3, uniqueCharacters));
 
     }
 }
