@@ -1,6 +1,5 @@
 package encodingdecoding;
 
-
 import java.util.Map;
 
 public class Encoder {
@@ -13,5 +12,6 @@ public class Encoder {
         }
         return encodedData;
     }
+
 
 }
