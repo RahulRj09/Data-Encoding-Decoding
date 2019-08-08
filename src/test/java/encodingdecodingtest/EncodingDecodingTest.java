@@ -12,14 +12,7 @@ import java.io.FileNotFoundException;
 import static org.junit.Assert.assertEquals;
 
 public class EncodingDecodingTest {
-    @Test
-    public void shouldDataRead() throws FileNotFoundException {
-        Reader reader = new Reader();
-        String path = "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput";
-        String expected = "rahul";
-        assertEquals(expected, reader.read(path));
 
-    }
 
     @Test
     public void stringShouldEncodedInUpperCase() throws FileNotFoundException {
