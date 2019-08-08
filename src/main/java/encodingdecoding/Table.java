@@ -36,8 +36,11 @@ public class Table {
 
         return encoding;
     }
-    public Map<Character,String> generateUniqueCharactersTable(HashSet uniqueCharacters){
-
+    public Map<Character,String> generateUniqueCharactersBinaryTable(HashSet uniqueCharacters){
+        Map<Character,String> bitsBinary =  new HashMap<>();
+        for (Object demo: uniqueCharacters) {
+            System.out.println(demo);
+        }
         return null;
     }
 }

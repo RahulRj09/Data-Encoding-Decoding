@@ -4,7 +4,7 @@ import readerwriter.*;
 
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Set;
+
 
 
 class User {
@@ -19,8 +19,8 @@ class User {
         Bits bites = new Bits();
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         HashSet uniqueCharactersHashSet=uniqueCharacters.getUniqueCharacters(userInput);
-        System.out.println(bites.getBits(uniqueCharactersHashSet.size()));
-        System.out.println(table.generateUniqueCharactersTable(uniqueCharactersHashSet));
+        int bit =bites.getBits(uniqueCharactersHashSet.size());
+        System.out.println(table.generateUniqueCharactersBinaryTable(uniqueCharactersHashSet));
         byte[] userInputEncoded = encoder.encode(userInput, table.generateUpperBinaryTable());
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
