@@ -4,14 +4,20 @@ import readerwriter.*;
 
 import java.io.IOException;
 
+
 class User {
+
     public static void main(String[] args) throws IOException {
         Encoder encoder = new Encoder();
         Decoder decoder = new Decoder();
         Table table = new Table();
         Reader reader = new Reader();
         Writer writer = new Writer();
+        UniqueCharacter uniqueCharacters = new UniqueCharacter();
+        Bits bites = new Bits();
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
+        int lengthOfUniqueCharacters=uniqueCharacters.getUniqueCharacters(userInput);
+        System.out.println(bites.getBits(lengthOfUniqueCharacters));
         byte[] userInputEncoded = encoder.encode(userInput, table.generateUpperBinaryTable());
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");

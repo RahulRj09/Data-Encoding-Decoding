@@ -21,7 +21,7 @@ public class EncodingDecodingTest {
     }
 
     @Test
-    public void stringShouldEncodedInBinary() throws FileNotFoundException {
+    public void stringShouldEncodedInUpperCase() throws FileNotFoundException {
         String expected = "RAHUL";
         Encoder encoder = new Encoder();
         Table table = new Table();
