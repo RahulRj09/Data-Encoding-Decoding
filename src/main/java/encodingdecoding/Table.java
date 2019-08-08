@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Table {
-    Map<Integer, String> table = new HashMap<>();
 
     public Map<Integer, String> generateBinaryTable() {
+        Map<Integer, String> table = new HashMap<>();
         for (int i = 0; i < 256; i++) {
             String binaryNumber = Integer.toBinaryString(i);
             StringBuilder fixed = new StringBuilder();
@@ -34,6 +34,7 @@ public class Table {
 
         return encoding;
     }
+
 }
 
 

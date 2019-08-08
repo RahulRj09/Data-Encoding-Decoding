@@ -7,6 +7,8 @@ import readerwriter.*;
 
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,7 +36,13 @@ public class EncodingDecodingTest {
         assertEquals(expected, actual);
 
     }
-
+    @Test
+    public void shouldGiveThelengthOfUniqueCharactersInString(){
+        String actual = "rahulram";
+        UniqueCharacter uniqueCharacter = new UniqueCharacter();
+        int expected = 6;
+        assertEquals(expected,uniqueCharacter.getUniqueCharacters(actual).size());
+    }
 //    @Test
 //    public void binaryShouldDecodedInString() throws FileNotFoundException {
 //        Encoder encoder = new Encoder();
