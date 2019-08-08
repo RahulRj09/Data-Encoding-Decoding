@@ -7,8 +7,7 @@ public class Reader {
     public String read(String path) throws FileNotFoundException {
         File file = new File(path);
         Scanner sc = new Scanner(file);
-        String input = String.valueOf(sc.next());
-        return input;
+        return String.valueOf(sc.next());
     }
 }
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Table {
-    private static Map<Integer, String> table = new HashMap<>();
+    Map<Integer, String> table = new HashMap<>();
 
     public Map<Integer, String> generateBinaryTable() {
         for (int i = 0; i < 256; i++) {

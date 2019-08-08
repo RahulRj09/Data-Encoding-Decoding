@@ -16,8 +16,8 @@ class User {
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         System.out.println(encodedData);
-//      String decoded = decoder.getDecodeData(encodedData, table.generateBinaryTable());
-//      writer.write(decoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/DecodedData");
-//      System.out.println(decoded);
+//        byte[] decoded = decoder.getDecodeData(encodedData.toLowerCase(), table.generateBinaryTable());
+//        writer.write(decoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/DecodedData");
+//        System.out.println(decoded);
     }
 }
