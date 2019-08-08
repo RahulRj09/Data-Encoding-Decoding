@@ -1,4 +1,5 @@
 package encodingdecodingtest;
+
 import encodingdecoding.*;
 import org.junit.Test;
 
