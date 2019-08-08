@@ -3,8 +3,8 @@ package encodingdecoding;
 import readerwriter.*;
 
 import java.io.IOException;
-import java.util.HashSet;
-
+import java.util.Map;
+import java.util.Set;
 
 
 class User {
@@ -15,12 +15,13 @@ class User {
         Table table = new Table();
         Reader reader = new Reader();
         Writer writer = new Writer();
+        BitsTable bt = new BitsTable();
         UniqueCharacter uniqueCharacters = new UniqueCharacter();
-        Bits bites = new Bits();
+        Bits bits = new Bits();
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
-        HashSet uniqueCharactersHashSet=uniqueCharacters.getUniqueCharacters(userInput);
-        int bit =bites.getBits(uniqueCharactersHashSet.size());
-        System.out.println(table.generateUniqueCharactersBinaryTable(uniqueCharactersHashSet));
+        Set uniqueCharactersSet = uniqueCharacters.getUniqueCharacters(userInput);
+        int bit = bits.getBits(uniqueCharactersSet.size());
+        Map bitsTable= bt.generateUniqueCharactersBinaryTable(bit, uniqueCharactersSet);
         byte[] userInputEncoded = encoder.encode(userInput, table.generateUpperBinaryTable());
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");

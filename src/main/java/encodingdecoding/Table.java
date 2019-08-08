@@ -1,9 +1,8 @@
 package encodingdecoding;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
+
 
 public class Table {
 
@@ -36,13 +35,8 @@ public class Table {
 
         return encoding;
     }
-    public Map<Character,String> generateUniqueCharactersBinaryTable(HashSet uniqueCharacters){
-        Map<Character,String> bitsBinary =  new HashMap<>();
-        for (Object demo: uniqueCharacters) {
-            System.out.println(demo);
-        }
-        return null;
-    }
+
+
 }
 
 
