@@ -36,16 +36,6 @@ public class EncodingDecodingTest {
 
     }
 
-    @Test
-    public void shouldGiveTheLengthOfUniqueCharactersInString() {
-        String userInput = "rahulram";
-        UniqueCharacter uniqueCharacter = new UniqueCharacter();
-        int expected = 6;
-        assertEquals(expected, uniqueCharacter.getUniqueCharacters(userInput).size());
-    }
-
-
-
 
 //    @Test
 //    public void binaryShouldDecodedInString() throws FileNotFoundException {
