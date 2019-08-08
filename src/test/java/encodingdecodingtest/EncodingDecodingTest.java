@@ -37,21 +37,14 @@ public class EncodingDecodingTest {
     }
 
     @Test
-    public void shouldGiveThelengthOfUniqueCharactersInString() {
+    public void shouldGiveTheLengthOfUniqueCharactersInString() {
         String userInput = "rahulram";
         UniqueCharacter uniqueCharacter = new UniqueCharacter();
         int expected = 6;
         assertEquals(expected, uniqueCharacter.getUniqueCharacters(userInput).size());
     }
 
-    @Test public void shouldGiveTheNumberOfBitsInWhichUniqueCharacterRepresent()  {
-        UniqueCharacter uniqueCharacter = new UniqueCharacter();
-        Bits bits =new Bits();
-        int expected = 3;
-        String userInput = "rahulram";
-        int len = uniqueCharacter.getUniqueCharacters(userInput).size();
-        assertEquals(expected,bits.getBits(len));
-    }
+
 
 
 //    @Test

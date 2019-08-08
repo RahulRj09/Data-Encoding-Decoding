@@ -1,7 +1,9 @@
 package encodingdecoding;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Table {
 
@@ -34,7 +36,10 @@ public class Table {
 
         return encoding;
     }
+    public Map<Character,String> generateUniqueCharactersTable(HashSet uniqueCharacters){
 
+        return null;
+    }
 }
 
 
