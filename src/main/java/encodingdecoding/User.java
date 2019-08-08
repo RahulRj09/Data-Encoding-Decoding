@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
-
 class User {
-
     public static void main(String[] args) throws IOException {
         Encoder encoder = new Encoder();
         Decoder decoder = new Decoder();
@@ -21,7 +19,8 @@ class User {
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         Set uniqueCharactersSet = uniqueCharacters.getUniqueCharacters(userInput);
         int bit = bits.getBits(uniqueCharactersSet.size());
-        Map bitsTable= bt.generateUniqueCharactersBinaryTable(bit, uniqueCharactersSet);
+        Map bitsTable = bt.generateUniqueCharactersBinaryTable(bit, uniqueCharactersSet);
+        System.out.println(bitsTable);
         byte[] userInputEncoded = encoder.encode(userInput, table.generateUpperBinaryTable());
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
         String encodedData = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
