@@ -16,10 +16,12 @@ class User {
         BitsTable bt = new BitsTable();
         UniqueCharacter uniqueCharacters = new UniqueCharacter();
         Bits bits = new Bits();
+        BitsTableWriter bitsTableWriter = new BitsTableWriter();
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         Set uniqueCharactersSet = uniqueCharacters.getUniqueCharacters(userInput);
         int bit = bits.getBits(uniqueCharactersSet.size());
         Map bitsTable = bt.generateUniqueCharactersBinaryTable(bit, uniqueCharactersSet);
+        bitsTableWriter.write(bitsTable);
         System.out.println(bitsTable);
         byte[] userInputEncoded = encoder.encode(userInput, table.generateUpperBinaryTable());
         writer.write(userInputEncoded, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
