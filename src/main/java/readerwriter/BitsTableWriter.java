@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 public class BitsTableWriter {
-     public void write(Map bitsTable) {
+    public void write(Map bitsTable) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         try {

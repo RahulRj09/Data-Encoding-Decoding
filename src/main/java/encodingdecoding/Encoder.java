@@ -3,15 +3,13 @@ package encodingdecoding;
 import java.util.Map;
 
 public class Encoder {
-    public byte[] encode(String userInput, Map<Integer, String> table) {
+    public byte[] encode(String userInput, Map<Character, String> table) {
+
         byte[] encodedData = new byte[userInput.length()];
         for (int i = 0; i < userInput.length(); i++) {
             char character = userInput.charAt(i);
-            String encodedValue = table.get((int) character);
-            encodedData[i] = Byte.parseByte(encodedValue, 2);
+            encodedData[i] = Byte.parseByte(table.get(character), 2);
         }
         return encodedData;
     }
-
-
 }

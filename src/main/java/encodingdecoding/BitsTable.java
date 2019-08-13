@@ -5,8 +5,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class BitsTable {
-    public Map<Character, String> generateUniqueCharactersBinaryTable(int bit, Set uniqueCharacters) {
-        Map<Character, String> bits = new HashMap<>();
+    public Map<Character, boolean[]> generateUniqueCharactersBinaryTable(int bit, Set uniqueCharacters) {
+        Map<Character, boolean[]> bits = new HashMap<>();
+
         int bin = 0;
         for (Object word : uniqueCharacters) {
             char word1 = (char) word;
@@ -16,9 +17,25 @@ public class BitsTable {
                 fixed.append("0");
             }
             fixed.append(binaryNumber);
-            bits.put(word1, fixed.toString());
+            boolean[] booleans = toBoolean(fixed);
+            bits.put(word1, booleans);
             bin += 1;
+
         }
         return bits;
+    }
+
+    boolean[] toBoolean(StringBuilder fixed) {
+        boolean[] booleans = new boolean[3];
+        for (int i = 0; i < fixed.toString().length(); i++) {
+            char temp = fixed.toString().charAt(i);
+            if (temp == '0') {
+                booleans[i] = false;
+            } else {
+                booleans[i] = true;
+            }
+
+        }
+        return booleans;
     }
 }

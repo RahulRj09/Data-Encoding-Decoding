@@ -1,7 +1,7 @@
 {
-  "a" : "000",
-  "r" : "001",
-  "u" : "010",
-  "h" : "011",
-  "l" : "100"
+  "a" : [ false, false, false ],
+  "r" : [ false, false, true ],
+  "u" : [ false, true, false ],
+  "h" : [ false, true, true ],
+  "l" : [ true, false, false ]
 }

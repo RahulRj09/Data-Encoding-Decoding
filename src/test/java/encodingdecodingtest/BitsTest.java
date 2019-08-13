@@ -11,6 +11,6 @@ public class BitsTest {
         Bits bits = new Bits();
         int expected = 3;
         int actual = 6;
-        assertEquals(expected, bits.getBits(actual));
+        assertEquals(expected, bits.getNumberOfBitsRequired(actual));
     }
 }
