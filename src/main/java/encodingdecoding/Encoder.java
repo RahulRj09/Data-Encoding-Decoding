@@ -1,14 +1,26 @@
 package encodingdecoding;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Encoder {
-    public byte[] encode(String userInput, Map<Character, String> table) {
+    public List<Boolean> encode(String userInput, Map<Character, String> table) {
 
-        byte[] encodedData = new byte[userInput.length()];
+        List<Boolean> encodedData = new ArrayList<>();
+
         for (int i = 0; i < userInput.length(); i++) {
             char character = userInput.charAt(i);
-            encodedData[i] = Byte.parseByte(table.get(character), 2);
+            String encodedBitsForACharacter = table.get(character);
+
+            String[] splits = encodedBitsForACharacter.split("");
+            for (String split : splits) {
+                if (split.equals("0")) {
+                    encodedData.add(false);
+                } else {
+                    encodedData.add(true);
+                }
+            }
         }
         return encodedData;
     }
