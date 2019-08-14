@@ -28,7 +28,7 @@ class Client {
 
         List<Boolean> userInputEncoded = encoder.encode(userInput, bitsTable);
         byte[] bytes = byteConverter.toBytes(userInputEncoded);
-
+        System.out.println(bytes[0]);
         writer.write(bytes, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
     }
 }
