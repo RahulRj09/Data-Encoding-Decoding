@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class BitsTest {
+public class BitsCounterTest {
     @Test
     public void shouldGiveTheNumberOfBitsInWhichUniqueCharacterRepresent() {
-        Bits bits = new Bits();
+        BitsCounter bits = new BitsCounter();
         int expected = 3;
         int actual = 6;
-        assertEquals(expected, bits.getNumberOfBitsRequired(actual));
+        assertEquals(expected, bits.getBits(actual));
     }
 }

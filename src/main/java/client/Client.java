@@ -13,22 +13,28 @@ class Client {
         Encoder encoder = new Encoder();
         Reader reader = new Reader();
         Writer writer = new Writer();
-        BitsTable bt = new BitsTable();
+        BinaryTableBits bt = new BinaryTableBits();
         UniqueCharacter uniqueCharacters = new UniqueCharacter();
-        Bits bits = new Bits();
+        BitsCounter bits = new BitsCounter();
         BitsTableWriter bitsTableWriter = new BitsTableWriter();
         ByteConverter byteConverter = new ByteConverter();
+        Decoder decoder = new Decoder();
+        DecoderBinaryTable decoderBinaryTable = new DecoderBinaryTable();
+        BinaryToStringConverter binaryToStringConverter = new BinaryToStringConverter();
 
         String userInput = reader.read("/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/UserInput");
         Set<Character> uniqueCharactersSet = uniqueCharacters.getUniqueCharacters(userInput);
 
-        int bit = bits.getNumberOfBitsRequired(uniqueCharactersSet.size());
-        Map<Character, String> bitsTable = bt.generateUniqueCharactersBinaryTable(bit, uniqueCharactersSet);
+        int bit = bits.getBits(uniqueCharactersSet.size());
+        Map<Character, String> bitsTable = bt.generateBinaryTable(bit, uniqueCharactersSet);
         bitsTableWriter.write(bitsTable);
 
         List<Boolean> userInputEncoded = encoder.encode(userInput, bitsTable);
         byte[] bytes = byteConverter.toBytes(userInputEncoded);
-        System.out.println(bytes[0]);
+
         writer.write(bytes, "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
+        String decodedData = decoder.getDecodeBinary(bytes, decoderBinaryTable.getDecodedBinaryTable(bytes));
+        System.out.println(binaryToStringConverter.getDecodeData(decodedData, bitsTable, bit));
+
     }
 }

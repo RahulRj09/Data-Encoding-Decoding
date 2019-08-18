@@ -13,7 +13,7 @@ public class DecoderTest {
 //        byte[] encoded = encoder.encode(userInput, table.generateBinaryTable());
 //        writer.write(encoded,
 //                "/Users/rahul.joshi/dataencodingdecoding/src/main/java/resources/EncodedData");
-//        assertEquals(userInput, decoder.getDecodeData(encoded, table.generateBinaryTable()));
+//        assertEquals(userInput, decoder.getDecodeBinary(encoded, table.generateBinaryTable()));
 //    }
 
 }

@@ -4,20 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class BitsTable {
-    public Map<Character, String> generateUniqueCharactersBinaryTable(int bit, Set uniqueCharacters) {
+public class BinaryTableBits {
+    public Map<Character, String> generateBinaryTable(int numberOfBitsRequired, Set<Character> uniqueCharacters) {
         Map<Character, String> bits = new HashMap<>();
 
         int bin = 0;
-        for (Object word : uniqueCharacters) {
-            char word1 = (char) word;
+        for (Character character : uniqueCharacters) {
             String binaryNumber = Integer.toBinaryString(bin);
             StringBuilder fixed = new StringBuilder();
-            for (int j = 0; j < bit - binaryNumber.length(); j++) {
-                fixed.append("0");
-            }
+            fixed.append("0".repeat(Math.max(0, numberOfBitsRequired - binaryNumber.length())));
             fixed.append(binaryNumber);
-            bits.put(word1, fixed.toString());
+            bits.put(character, fixed.toString());
             bin += 1;
 
         }

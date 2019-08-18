@@ -11,9 +11,7 @@ public class Table {
         for (int i = 0; i < 256; i++) {
             String binaryNumber = Integer.toBinaryString(i);
             StringBuilder fixed = new StringBuilder();
-            for (int j = 0; j < 8 - binaryNumber.length(); j++) {
-                fixed.append("0");
-            }
+            fixed.append("0".repeat(8 - binaryNumber.length()));
             fixed.append(binaryNumber);
             table.put(i, fixed.toString());
         }
